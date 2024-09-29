@@ -1,7 +1,12 @@
-# simple-projects
+# study-projects
 A repository which contains some very simple terminal applications using programming languages I'm studying
 
 Developed while I was:
 - Watching some on-line courses
 - Studying on my own
 - Testing boundaries of the programming language
+
+## Projects
+
+### ![URL Extractor](https://github.com/vToshio/study-projects/tree/main/Extrator_URL)
+- URL parameters extraction using Python's standard regular expressions lib
