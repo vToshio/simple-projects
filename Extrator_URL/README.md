@@ -1,5 +1,6 @@
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
+29/07/2024
 # Extrator URL
 
 Projeto desenvolvido durante o curso 'String em Python: extraindo Informações de uma URL'.
