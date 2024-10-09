@@ -22,21 +22,22 @@ cursor = conn.cursor()
 
 # Criando o banco de dados e definindo as tabelas
 
-cursor.execute(f'CREATE DATABASE IF NOT EXISTS `teste`;')
-cursor.execute(f'USE teste;')
+cursor.execute('DROP TABLE IF EXISTS `teste`')
+cursor.execute('CREATE DATABASE `teste`;')
+cursor.execute('USE teste;')
 
 create_users_table = '''
-    CREATE TABLE IF NOT EXISTS `users`(
-        `user_id` int(11) NOT NULL AUTO_INCREMENT,
-        `user_name` varchar(30) NOT NULL,
-        `user_role` varchar(20) NOT NULL,
-        `user_passwd` varchar(100) NOT NULL,
-        PRIMARY KEY (`user_id`)    
+    CREATE TABLE `users`(
+        `id` int(11) NOT NULL AUTO_INCREMENT,
+        `name` varchar(30) NOT NULL,
+        `role` varchar(20) NOT NULL,
+        `passwd` varchar(100) NOT NULL,
+        PRIMARY KEY (`id`)    
         );
 '''
 
 add_master_user = """
-    INSERT INTO users(user_name, user_role, user_passwd)
+    INSERT INTO users(name, role, passwd)
     VALUES ('master', 'master', 'master')
 """
 
