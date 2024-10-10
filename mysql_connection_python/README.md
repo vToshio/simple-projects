@@ -17,3 +17,6 @@ Entender o funcionamento de ORM's (Object-Relational Mapping) bem como funciona 
 
 ### Programação Lógica
 Aprofundar o meu conhecimento em bibliotecas Python e desenvolver as minhas habilidades em programação prática e em queries SQL, para que possam ser aplicadas em projetos futuros.
+
+### Entender Operações CRUD
+Desenvolver o meu conhecimento à respeito de como realizar operações CRUD (Create, Remove, Update, Delete) em sistemas web utilizando o micro-framework Python, Flask, e sua ORM SQLAlchemy 
