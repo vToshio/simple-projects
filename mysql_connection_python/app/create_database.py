@@ -21,24 +21,25 @@ except sqlconnect.Error as err:
 cursor = conn.cursor() 
 
 # Criando o banco de dados e definindo as tabelas
-
-cursor.execute('DROP TABLE IF EXISTS `teste`')
+cursor.execute('DROP DATABASE IF EXISTS `teste`;')
 cursor.execute('CREATE DATABASE `teste`;')
 cursor.execute('USE teste;')
 
+cursor.execute('DROP TABLE IF EXISTS `teste`')
 create_users_table = '''
     CREATE TABLE `users`(
         `id` int(11) NOT NULL AUTO_INCREMENT,
         `name` varchar(30) NOT NULL,
         `role` varchar(20) NOT NULL,
+        `job` varchar(20) NOT NULL,
         `passwd` varchar(100) NOT NULL,
         PRIMARY KEY (`id`)    
         );
 '''
 
 add_master_user = """
-    INSERT INTO users(name, role, passwd)
-    VALUES ('master', 'master', 'master')
+    INSERT INTO users(name, role, job, passwd)
+    VALUES ('master', 'master', 'Gerente de Sistema', 'master123@')
 """
 
 cursor.execute(create_users_table)

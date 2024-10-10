@@ -20,3 +20,4 @@ Aprofundar o meu conhecimento em bibliotecas Python e desenvolver as minhas habi
 
 ### Entender Operações CRUD
 Desenvolver o meu conhecimento à respeito de como realizar operações CRUD (Create, Remove, Update, Delete) em sistemas web utilizando o micro-framework Python, Flask, e sua ORM SQLAlchemy 
+
