@@ -7,4 +7,3 @@ $(document).ready(function() {
         $('#modalRemover input[name=user_id]').val(user_id);
     });
 });
-

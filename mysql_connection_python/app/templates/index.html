@@ -7,7 +7,7 @@
                 <h5 class="modal-title" id="titulo-remover"></h5>
                 <button class="btn-close" data-bs-dismiss="modal" aria-label="btn-close"></button>
             </div>
-            <form action="">
+            <form action="{{ url_for('views.delete') }}" method="post">
                 <input type="hidden" name="user_id">
                 <div class="modal-body">
                     <p>Você realmente deseja excluir esse usuário?</p>
@@ -83,9 +83,9 @@
                     <td> {{ user.job }}</td>
                     <td> {{ user.role }}</td>
                     <td>
-                        <button type="button" data-bs-toggle="modal" class="btn btn-primary">
+                        <a href="{{ url_for('views.edit', id=user.id) }}" class="btn btn-primary">
                             <i class="bi bi-pencil-square"></i>
-                        </button>
+                        </a>
                         <button type="button" data-bs-toggle="modal" data-bs-target="#modalRemover" data-task-id="{{ user.id    }}" class="btn btn-danger">
                             <i class="bi bi-trash"></i>
                         </button>
@@ -96,4 +96,7 @@
         </table>
     </div>
 </section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="{{ url_for('static', filename='script_modal.js') }}"></script>
 {% endblock %}

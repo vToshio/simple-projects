@@ -1,3 +1,55 @@
 {% extends 'template.html' %}
 {% block content %}
+<script>
+    $('#select-id').val()
+</script>
+
+<section class="container w-50 mt-5">
+    <h1>{{ titulo }}</h1>
+</section>
+
+<section class="container w-50 my-3">
+    <form action="{{ url_for('views.update') }}" method="post">
+        <fieldset class="col">
+            <input id="hidden-job" type="hidden" value="{{ user.job }}">
+            <input id="hidden-role" type="hidden" value="{{ user.role }}">
+            <input name="id" value="{{ user.id }}" type="hidden">
+            <div class="row my-3">
+                <div class="form-group">
+                    <label class="form-label" for="username">Nome do Usuário</label>
+                    <input name="username" type="text" class="form-control" value="{{ user.name }}">
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col">
+                    <label for="job" class="form-label">Cargos</label>
+                    <select name="job" class="form-select" id="select-job" required>
+                        <option value="Gerente">Gerente</option>
+                        <option value="Auxiliar de Produção">Auxiliar de Produção</option>
+                        <option value="Contador">Contador</option>
+                        <option value="Recepcionista">Recepcionista</option>
+                        <option value="Motorista">Motorista</option>
+                        <option value="Telefonista">Telefonista</option>
+                        <option value="Vendedor">Vendedor</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="role" class="form-label">Permissões</label>
+                    <select name="role" class="form-select" id="select-role">
+                        <option value="master">Mestre</option>
+                        <option value="admin">Administrador</option>
+                        <option value="user">Usuário Comum</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group text-center my-5">
+                <a href="{{ url_for('views.index' )}}" class="btn btn-secondary">Cancelar Edições</a>
+                <button type="submit" class="btn btn-primary">Atualizar Informações</button>
+            </div>
+        </fieldset>
+    </form>
+</section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="{{ url_for('static', filename='script_selects.js') }}"></script>
 {% endblock %}

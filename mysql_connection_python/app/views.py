@@ -27,10 +27,26 @@ def create():
 
     return redirect(url_for('views.index'))
 
-@views.route('/remover')
-def remove():
-    pass
+@views.route('/remover', methods=['POST'])
+def delete():
+    User.query.filter_by(id=request.form['user_id']).delete()
+    db.session.commit()
+    return redirect(url_for('views.index'))
 
 @views.route('/editar/<int:id>')
 def edit(id):
-    pass
+    user = User.query.filter_by(id=id).first()
+    return render_template('editar.html', titulo='Editar Dados do Usuário', user=user)
+
+@views.route('/editar/atualizar', methods=['POST'])
+def update():
+    user = User.query.filter_by(id=request.form['id']).first()
+
+    user.name = request.form['username']
+    user.job = request.form['job']  
+    user.role = request.form['role']
+
+    db.session.add(user)
+    db.session.commit()
+
+    return redirect(url_for('views.index'))
